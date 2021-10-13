@@ -19,4 +19,9 @@ describe DockingStation do
     #station = DockingStation.new
     #expect(station.return_bike(bike)).to eq(bike)
   end
+  describe 'release_bike' do
+  it 'raise error if no bike is available' do
+    expect { subject.release_bike }.to raise_error('No Bike In Station')
+  end
+  end
 end
