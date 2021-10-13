@@ -14,6 +14,7 @@ class DockingStation
   end
 
   def return_bike(bike)
+    fail 'Bikes at maximum capacity' if @bike
     @bike = bike
   end
 

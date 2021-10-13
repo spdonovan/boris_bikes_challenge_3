@@ -15,6 +15,14 @@ describe DockingStation do
     end
   end
 
+  describe '#return_bike' do
+    it 'raises an error when there is already a bike' do
+      bike = Bike.new
+      subject.return_bike(bike)
+      expect { subject.return_bike(bike) }.to raise_error 'Bikes at maximum capacity'
+    end
+  end
+
   it 'Release a working bike' do
     # station = DockingStation.new
     bike =  Bike.new
