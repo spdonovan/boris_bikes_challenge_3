@@ -23,8 +23,13 @@ describe DockingStation do
     end
 
     it 'docking station should have a default capacity of 20 bikes' do
-      expect(subject.bikes).to eq(20)
+      expect(subject.max_bikes).to eq(20)
     end
+  end
+
+  it 'return bike will add a bike into docking station rack' do
+    bikes= [bike]
+    expect(subject.return_bikes(bike)).to eq(bikes)
   end
 
   it 'Release a working bike' do
